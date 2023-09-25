@@ -24,6 +24,8 @@
   scroll-behavior: smooth;
 }
 
+
+
 body {
   height: 100vh;
   width: 100vw;
@@ -39,15 +41,12 @@ body {
     align-items: center;
     justify-content: space-between;
     margin-top: 0vh;
-    height: 10%;
-    border-radius: 0.4rem;
-    position: sticky;
-    top: 0px;
+    height: 10vh;
     overflow: hidden;
 }
 
 .logo {
-    transform: scale(1.1);
+    transform: scale(1);
     margin-left: 2.5vw;
 }
 
@@ -60,24 +59,29 @@ body {
 
 .navLink a {
     color: white;
-    font-size: 1.4vw;
+    font-size: 1.2vw;
     font-family: 'Inter', sans-serif;
     position: relative;
     cursor: pointer;
 }
 
+
+
+
+
 /**Adding hover effect to the links(Underline_effect)**/
 
 
 .register-btn{
-    padding:0.2vh 1vw;
-    height:4vh;
+    padding:1vh 1vw;
+    height:5vh;
     font-size: 1.1vw;
     border:none;
     outline:none;
     background-color: var(--skin);
     font-family: sans-serif;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 /*Hamburger Section Styling*/
@@ -89,12 +93,12 @@ body {
 .hamburger-section {
     display: none;
     position: absolute;
-    top: 8vh;
+    top: 10vh;
     right: 0;
-    height: 100vh;
+    height: 60vw;
     width: 100vw;
     background: var(--dark);
-    opacity: 0.7;
+    opacity: 0.9;
     transform: translateX(100vw);
     transition: all 0.5s ease-in-out;
     display: flex;
@@ -105,7 +109,7 @@ body {
 }
 
 .hamburger-section-show {
-    transform: translateX(1.4vw);
+    transform: translateX(0vw);
 }
 
 .hamburger-navbar {
@@ -121,7 +125,7 @@ body {
 .mapSection {
     position: relative;
   box-sizing: border-box;
-  height: 80vw;
+  height: 60vw;
   width: 100%;
   overflow: hidden;
   z-index: 1;
@@ -147,7 +151,7 @@ body {
 
   .city-selection-list {
     position: absolute;
-    top: 38vw;
+    top: 30vw;
     width: 100%;
     flex-direction: column;
     display: flex;
@@ -619,14 +623,14 @@ body {
   color: white;
   margin: 0.76vh 0;
   font-family: "Inter", sans-serif;
-  font-size: calc(1vw);
+  font-size: calc(1.2vw);
 }
 
 .social-media-icon {
   align-self: flex-end;
-  margin-bottom: 2.1vh;
+  margin-bottom: 2.5vh;
   color: white;
-  font-size: calc(1vw + 0.4rem);
+  font-size: calc(1vw + 0.8rem);
   text-align: center;
 }
 
@@ -641,7 +645,7 @@ body {
 }
 
 .footer-logo img {
-  transform: scale(0.8);
+  transform: scale(0.9);
 }
 
 .icon {
@@ -703,10 +707,8 @@ body {
 }
 
 /*Media Queries for the card-section i.e. competition center*/
-@media (max-width:1300px) and (orientation:portrait){
-  .guideline-right-section{
-    right:0;
-  }
+@media (min-width:1200px) and (orientation:portrait){
+ 
   
   
     
@@ -831,7 +833,7 @@ body {
     position: relative;
     left: -12vw;
     top: -0.5vh;
-    transform: scale(0.85);
+    transform: scale(0.80);
   }
   
   .card-hover-content h4 , .comp-hover-type{
@@ -877,6 +879,10 @@ body {
     padding:2.5vh 1vw;
     font-size: 1.4vh;
 }
+
+.btn{
+  width:100%;
+}
 }
 
 @media (max-width: 430px) and (orientation: portrait) {
@@ -894,7 +900,7 @@ body {
   }
   .row-card-main-container-left,
   .row-card-main-container-right {
-    margin: 0vh 0vw;
+    margin: 4vh 0vw;
   }
 
   .guideline-left-section, .guideline-right-section{
@@ -923,6 +929,10 @@ body {
 
   .row-section {
     margin: 0vh 0vw;
+  }
+  .row-card-left{
+    position: relative;
+    left:-22.5vw;
   }
   .row-card-right {
     position: relative;
@@ -956,5 +966,65 @@ body {
 }
 
   
+}
+
+/*Styking for the landscape mode*/
+@media (max-width:950px) and (orientation:landscape){
+  .logo{
+    transform:scale(0.7)
+  }
+  
+  .row-section{
+    margin:15vh 0vw;
+  }
+
+  .row-card{
+    width:60%;
+  }
+
+  .row-card-left{
+    position: relative;
+    left:-10vw;
+  }
+
+  .row-card-right{
+    position: relative;
+    left:10vw;
+  }
+
+  .card-hover-content{
+    position: relative;
+    top:-2vh;
+  }
+  .guideline-left-section, .guideline-right-section{
+    transform: scale(1.1);
+    height:60vh;
+  }
+
+  .footer{
+    height:25vh;
+  }
+}
+
+@media (max-width:870px) and (orientation:landscape){
+  .comp-hover-des{
+    font-size:1.2vw;
+  }
+  .comp-hover-type, .card-hover-content h4{
+    font-size: 1.2vw;
+  }
+  .card-hover-content{
+    top:-1vh;
+  }
+}
+
+
+
+@media (max-width:690px) and (orientation:landscape){
+  .card-hover-content{
+    transform: scale(0.7);
+    left:-3vw;
+    top:-0.4vw;
+  }
 }
 
