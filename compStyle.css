@@ -767,8 +767,7 @@ body {
   }
 
   .comp-hover-type {
-    transform: scale(0.8);
-    margin-left: -2vw;
+    font-size: 1.2vw;
   }
 }
 
@@ -836,13 +835,14 @@ body {
     transform: scale(0.80);
   }
   
-  .card-hover-content h4 , .comp-hover-type{
+  .card-hover-content h4 {
     font-size: 2.8vw;
   }
 
   .comp-hover-type{
     position: relative;
-    left:-1.2vw;
+    left:-0.3vw;
+    font-size: 2.3vw;
   }
 
   .row-card {
@@ -896,7 +896,7 @@ body {
     transform: scale(0.75);
     top:0vh;
     width: 40%;
-    left:-10vw;
+    left:-9vw;
   }
   .row-card-main-container-left,
   .row-card-main-container-right {
@@ -969,6 +969,15 @@ body {
 }
 
 /*Styking for the landscape mode*/
+
+@media (min-width:951px) and (orientation:landscape){
+  .row-section{
+    margin:0vh;
+  }
+  .row-card{
+    width:65%;
+  }
+}
 @media (max-width:950px) and (orientation:landscape){
   .logo{
     transform:scale(0.7)
@@ -1017,6 +1026,22 @@ body {
     top:-1vh;
   }
 }
+
+@media (min-width:691px) and (max-width:800px) and (orientation:landscape){
+  .row-section{
+    margin:0px;
+  }
+  .row-card{
+    width:65%;
+  }
+  .card-hover-content{
+    top:-0.2vh;
+    
+  }
+  
+}
+
+
 
 
 
