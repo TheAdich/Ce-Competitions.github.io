@@ -131,7 +131,7 @@ body {
     position: relative;
   box-sizing: border-box;
   height: 60vw;
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
   z-index: 1;
 }
@@ -341,6 +341,7 @@ body {
     width:50%;
     height:55vh;
     position: relative;
+    left:0vw;
     visibility: hidden;
     transform: scale(1);
 }
@@ -361,6 +362,7 @@ body {
     width:50%;
     height:100%;
     position: relative;
+    left:-1.3vw;
     visibility: hidden;
     right:0vw;
 }
@@ -600,6 +602,10 @@ body {
   .card-content{
     top:-1vh;
   }
+  .guideline-right-section{
+    left:0vw;
+  }
+  
 }
 
 @media screen and (max-width:1050px){
@@ -620,12 +626,17 @@ body {
       font-size: 1vh;
     }
    
+
+    .guideline-left-section, .guideline-right-section{
+      height:50vh;
+    }
 }
 
 @media screen and (max-width:950px){
 
   .row-section{
-    height:25vh;
+    margin-top:0;
+    margin-bottom:0;
   }
   .row-card-left{
     right:9vw;
@@ -640,28 +651,31 @@ body {
   .btn{
     font-size: 0.5vh;
   }
+  .guideline-left-section , .guideline-right-section{
+    height:80%;
+  }
   
 }
 
 @media screen and (max-width:650px){
   .row-section{
     flex-direction: column;
-    padding-bottom: 4vh;
-    height: fit-content;
-    margin:0;
+    height: 90vh;
+    justify-content: space-evenly;
   }
   .row-card-main-container-left, .row-card-main-container-right{
     width:90vw;
+    align-items: center;
+    height: 50%;
   }
 
   .row-card{
     width:40%;
     height:30vh;
-    margin:-3vh 0vw;
   }
 
   .row-card-right{
-    left:35vw;
+    left:36vw;
   }
   .card-content p{
     font-size: 1.4vw;
@@ -672,6 +686,31 @@ body {
   .btn{
     width:60%;
     font-size: calc(5px + 0.2vh);
+  }
+
+  .guideline-left-section, .guideline-right-section{
+    height: 100%;
+  }
+
+  .guideline-right-section{
+    left:17vw;
+  }
+
+  .guideline-left-section .guideline-content{
+    width:80%;
+    margin-left:1vw;
+  }
+
+  .guideline-box{
+    font-size: 2vw;
+  }
+
+  .guideline-content h2{
+    font-size: 4vw;
+  }
+
+  .guideline-right-section  .guideline-box{
+    margin-left: 4vw;
   }
 
 }
@@ -698,6 +737,20 @@ body {
     width:60%;
     font-size: calc(3px + 0.2vh);
   }
+
+  .guideline-left-section , .guideline-right-section{
+    height:70%;
+  }
+
+  .guideline-right-section{
+    left:10vw;
+  }
+
+  .btn{
+    font-size: 0.4vh;
+    height:fit-content;
+    border-radius: 4px;
+  }
 }
 
 @media (max-width:1000px) and (orientation:landscape){
@@ -709,7 +762,7 @@ body {
     height:10vh;
   }
   .row-section{
-    height:fit-content;
+    height:80vh;
     margin:10vh 0vw;
   }
   .btn{
