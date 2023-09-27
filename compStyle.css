@@ -77,17 +77,7 @@ body {
 /**Adding hover effect to the links(Underline_effect)**/
 
 
-.register-btn{
-    padding:1vh 1vw;
-    height:5vh;
-    font-size: 1.1vw;
-    border:none;
-    outline:none;
-    background-color: var(--skin);
-    font-family: sans-serif;
-    border-radius: 5px;
-    cursor: pointer;
-}
+
 
 /*Hamburger Section Styling*/
 
@@ -240,6 +230,44 @@ body {
   
   .city-selection-list-option li:nth-child(odd) {
     background: #212358;
+  }
+
+
+  .main-hero-section-map {
+    position: relative;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+  }
+  
+  .main-hero-section-map-background {
+    overflow: scroll;
+    position: relative;
+    zoom: 65%;
+    z-index: -4;
+  }
+  .main-hero-section-map::-webkit-scrollbar {
+    display: none;
+  }
+  .main-hero-section-map-background::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .main-hero-section-map-background,.main-hero-section-map{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .main-hero-section-components {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
   }
   
 /*CSS for the competition-hover-center class*/
@@ -418,11 +446,22 @@ body {
   display: block;
   margin: 0.4vh 0.4vw;
   width: 8vw;
+  text-align: center;
   transform: scale(0.8);
-  padding: 0.4vh 0.2vw;
   cursor: pointer;
-  font-size: 1vw;
+  font-size: calc(10px+0.4vh);
 }
+
+#guideline-btn{
+  padding:0.7vh 1vw;
+  color: #2B2D59;
+  border-color:  #2B2D59;
+}
+
+#register-btn{
+  padding:0.5vh 1vw;
+}
+
 
 /*css to the button guideline and register seperately*/
 .guideline-hover-Btn {
@@ -433,7 +472,6 @@ body {
 }
 
 .guideline-hover-Btn:hover {
-  background: var(--dark);
   border-color: var(--dark);
   color: white;
   box-shadow: -3px -3px 2px var(--yellow);
@@ -476,11 +514,16 @@ body {
 
 
 /*CSS for the footer part*/
+hr{
+  height:10px;
+  background-color: #333569;
+  border:none;
+}
 
 .footer {
   width: 100vw;
   height: 30vh;
-  background-color: #2c2e5b;
+  background-color: #212256;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -495,7 +538,7 @@ body {
   color: white;
   margin: 1vh 0;
   font-family: "Inter", sans-serif;
-  font-size: calc(1.2vw);
+  font-size: calc(0.5vw + 4px);
 }
 
 .social-media-icon {
@@ -503,8 +546,8 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  color: white;
-  font-size: calc(1vw + 0.8rem);
+  color: rgb(237, 237, 237);
+  font-size: calc(1vw + 4px);
   text-align: center;
   height:100%;
 }
@@ -527,26 +570,35 @@ body {
 }
 
 .footer-logo img {
-  transform: scale(0.9);
+  transform: scale(1);
   height:100%;
 }
 
 .icon {
-  margin: 0px 0.3rem;
+  margin: 0px 0.1rem;
 }
 
 .contact-details p {
-  font-size: calc(1vw + 0.1rem);
+  font-size: calc(0.8vw + 2px);
   color: white;
   font-family: sans-serif;
-  margin: 0.2vh 0;
+  margin: 0.4vh 0;
+}
+
+.contact-details span{
+  color:rgb(203, 203, 203);
 }
 
 .contact-details h2 {
   color: var(--yellow);
   text-align: center;
-  margin-bottom: 0.3vh;
-  font-size: calc(1vw + 0.3rem);
+  font-weight: 200;
+  margin-bottom: 0.8vh;
+  font-size: calc(1vw + 3px);
+}
+.contact-no{
+  margin-top: 1.2vh;
+  color:white
 }
 
 /*Media queries for the mobile version*/
@@ -594,7 +646,7 @@ body {
 
 @media screen and  (max-width:1500px){
   .card-content  p{
-    font-size: 1vw;
+    font-size: 0.85vw;
   }
   .card-content h4{
     font-size: calc(1.5vw - 0.1vh);
@@ -605,7 +657,9 @@ body {
   .guideline-right-section{
     left:0vw;
   }
-  
+  .btn{
+  font-size: 1vh;
+  }
 }
 
 @media screen and (max-width:1050px){
@@ -623,7 +677,8 @@ body {
       top:-0.4vh;
     }
     .btn{
-      font-size: 1vh;
+      font-size: 20%;
+
     }
    
 
@@ -654,7 +709,13 @@ body {
   .guideline-left-section , .guideline-right-section{
     height:80%;
   }
+  #guideline-btn, #register-btn{
+    padding:0.3vh 0vw;
+  }
   
+  .card-content .comp-hover-des{
+    font-size: 50%;
+  }
 }
 
 @media screen and (max-width:650px){
@@ -681,18 +742,21 @@ body {
     font-size: 1.4vw;
   }
   .card-content h4{
-    font-size: 2.5vw;
+    font-size: 2vw;
   }
-  .btn{
-    width:60%;
-    font-size: calc(5px + 0.2vh);
+
+  .card-content .comp-hover-des{
+    font-size: 45%;
+    margin-bottom: 1vh;
   }
+  
 
   .guideline-left-section, .guideline-right-section{
     height: 100%;
   }
 
   .guideline-right-section{
+    position: relative;
     left:17vw;
   }
 
@@ -713,6 +777,16 @@ body {
     margin-left: 4vw;
   }
 
+  .btn{
+    width:62%;
+    border-radius: 2px;
+    margin:0vh 0vw;
+    font-size:0.7vh;
+  }
+  #guideline-btn{
+    padding: 0.5vh 0vw;
+  }
+
 }
 
 @media screen and (max-width:500px){
@@ -726,6 +800,10 @@ body {
   .row-card-left{
     right:18vw;
   }
+  .btn{
+    border-width: 1px;
+    margin:0.3vh 0vw;
+  }
 }
 
 @media screen and (max-width:420px){
@@ -733,9 +811,16 @@ body {
     transform: scale(1.8);
   }
 
-  .btn{
-    width:60%;
-    font-size: calc(3px + 0.2vh);
+  .card-content .comp-hover-des{
+    margin-bottom: 0.4vh;
+  }
+
+  #guideline-btn{
+    padding:0.4vh 0vw;
+  }
+
+  #register-btn{
+    padding:0.2vh 0vw;
   }
 
   .guideline-left-section , .guideline-right-section{
@@ -746,11 +831,7 @@ body {
     left:10vw;
   }
 
-  .btn{
-    font-size: 0.4vh;
-    height:fit-content;
-    border-radius: 4px;
-  }
+ 
 }
 
 @media (max-width:1000px) and (orientation:landscape){
