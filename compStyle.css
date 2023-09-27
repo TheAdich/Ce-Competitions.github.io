@@ -90,15 +90,13 @@ body {
     position: absolute;
     top: 7vh;
     right: 0;
-    height: 60vw;
+    height: 100vh;
     width: 100vw;
-    background: var(--dark);
-    opacity: 0.9;
-    transform: translateX(100vw);
+    background: black;
     transition: all 0.5s ease-in-out;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     z-index:100;
 }
@@ -113,9 +111,14 @@ body {
 
 .hamburger-section a {
     color: white;
-    position: relative;
+    
 }
 
+.competition-webpage-hide{
+  height:0vh;
+  display: none;
+  
+}
 /*MAP SECTION STYLING*/
 .mapSection {
     position: relative;
@@ -131,6 +134,7 @@ body {
     position: absolute;
     height: 100%;
     width: 100%;
+    overflow: hidden;
   }
 
   .highway-to-alcher {
@@ -138,6 +142,8 @@ body {
     justify-content: space-around;
     width: 100vw;
     margin-top: 5vh;
+    position: absolute;
+    top:0;
   }
   
   .highway-to-alcher-image {
@@ -146,7 +152,7 @@ body {
 
   .city-selection-list {
     position: absolute;
-    top: 30vw;
+    top: 28vw;
     width: 100%;
     flex-direction: column;
     display: flex;
@@ -163,6 +169,7 @@ body {
   .city-selection-list-input {
     position: relative;
     width: 20vw;
+    top:10vh;
   }
   
   .city-selection-list-background {
@@ -184,8 +191,9 @@ body {
   
   .city-selection-list-input-value {
     margin-left: 1.2vw;
+    margin-top:1vw;
     cursor: pointer;
-    padding: 0.5vw;
+    padding: 0.9vw;
   }
   
   .city-selection-list-input-image {
@@ -193,6 +201,7 @@ body {
     width: 2vw;
     height: 1vw;
     margin-right: 1.2vw;
+    margin-top:1vw;
     transition: 0.5s;
   }
   
@@ -217,6 +226,8 @@ body {
   
   .city-selection-list-option.active{
     display: block;
+    position: relative;
+    top:10vh;
   }
   
   .city-selection-list-option li {
@@ -233,8 +244,9 @@ body {
   }
 
 
+  /*Map integration to hero-section*/
   .main-hero-section-map {
-    position: relative;
+    position: absolute;
     box-sizing: border-box;
     height: 100%;
     width: 100%;
@@ -244,8 +256,10 @@ body {
   .main-hero-section-map-background {
     overflow: scroll;
     position: relative;
-    zoom: 65%;
+    transform: scale(5);
     z-index: -4;
+    height:100%;
+    width:100%;
   }
   .main-hero-section-map::-webkit-scrollbar {
     display: none;
@@ -270,6 +284,9 @@ body {
     width: 100%;
   }
   
+
+  
+  
 /*CSS for the competition-hover-center class*/
 .competition-hover-center {
   width: 100vw;
@@ -290,7 +307,7 @@ body {
   display: flex;
   height: fit-content;
   width: 100vw;
-  margin: 4vh 3vw;
+  margin: 15vh 3vw;
 }
 
 /*.row-section-show{
@@ -302,6 +319,7 @@ body {
   width: 50vw;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .row-card {
@@ -312,15 +330,6 @@ body {
   display: flex;
 }
 
-.row-card-left {
-  position: relative;
-  right: 12vh;
-}
-
-.row-card-right {
-  position: relative;
-  left: 12vh;
-}
 
 .fake-card{
   width:44%;
@@ -364,81 +373,6 @@ body {
   align-self: self-end;
 }
 
-.guideline-left-section{
-    z-index:1;
-    width:50%;
-    height:55vh;
-    position: relative;
-    left:0vw;
-    visibility: hidden;
-    transform: scale(1);
-}
-.guideline-left-section.guideline-left-show{
-    visibility: visible;
-
-}
-.guideline-left-section img{
-    position: absolute;
-    display: block;
-    height:100%;
-    width:100%;
-    transform: scale(-1);
-}
-
-.guideline-right-section{
-    z-index:1;
-    width:50%;
-    height:100%;
-    position: relative;
-    left:-1.3vw;
-    visibility: hidden;
-    right:0vw;
-}
-.guideline-right-section.guideline-right-show{
-    visibility: visible;
-
-}
-.guideline-right-section img{
-    position: absolute;
-    display: block;
-    height:100%;
-    width:100%;
-    transform: scale(1);
-}
-
-.guideline-content{
-    position: absolute;
-    height:100%;
-    width:85%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    padding-bottom: 1vh;
-}
-
-.guideline-content-left{
-    margin-left:0.4vw;
-}
-
-.guideline-content-right{
-    margin-left:2.8vw;
-}
-
-.guideline-content h2{
-    color:var(--skin);
-    font-size:1.5vw;
-}
-
-.guideline-box{
-    font-family: sans-serif;
-    font-size:1.2vw;
-    background: url("public/para-block.png") no-repeat center center/cover;
-    padding:3vh 1vw;
-}
-.guideline-right-section h2{
-    position: relative;
-}
 
 
 
@@ -471,11 +405,6 @@ body {
   transition: all 0.4s ease-in-out;
 }
 
-.guideline-hover-Btn:hover {
-  border-color: var(--dark);
-  color: white;
-  box-shadow: -3px -3px 2px var(--yellow);
-}
 
 .register-hover-Btn {
   background: #882785;
@@ -483,10 +412,6 @@ body {
   border-radius: 0.3rem;
   border-color: #882785;
   transition: all 0.4s ease-in-out;
-}
-
-.register-hover-Btn:hover {
-  box-shadow: 3px 3px 2px var(--yellow);
 }
 
 /*Styling for an ifram video*/
@@ -514,11 +439,12 @@ body {
 
 
 /*CSS for the footer part*/
+/*
 hr{
   height:10px;
   background-color: #333569;
   border:none;
-}
+}*/
 
 .footer {
   width: 100vw;
@@ -527,18 +453,20 @@ hr{
   display: flex;
   align-items: center;
   justify-content: space-around;
+  border-top:10px solid #333569;
 }
 
 .nav-links {
   display: flex;
   flex-direction: column;
+  width:20%;
 }
 
 .nav-links a {
   color: white;
   margin: 1vh 0;
   font-family: "Inter", sans-serif;
-  font-size: calc(0.5vw + 4px);
+  font-size: calc(1.5vh + 2px);
 }
 
 .social-media-icon {
@@ -561,6 +489,7 @@ hr{
 
 .social-media-icon i {
   cursor: pointer;
+  font-size: 2vh;
   padding: 0vh 0.1vw;
 }
 
@@ -570,7 +499,7 @@ hr{
 }
 
 .footer-logo img {
-  transform: scale(1);
+  padding-right: 0.1vw;
   height:100%;
 }
 
@@ -578,23 +507,27 @@ hr{
   margin: 0px 0.1rem;
 }
 
+.contact-details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:20%;
+}
 .contact-details p {
-  font-size: calc(0.8vw + 2px);
+  font-size: calc(1vh + 2px);
   color: white;
   font-family: sans-serif;
   margin: 0.4vh 0;
+  width:100%;
 }
 
 .contact-details span{
   color:rgb(203, 203, 203);
 }
 
-.contact-details h2 {
-  color: var(--yellow);
-  text-align: center;
-  font-weight: 200;
-  margin-bottom: 0.8vh;
-  font-size: calc(1vw + 3px);
+#contact-us{
+  color:var(--yellow);
+  font-size: calc(1.3vh + 2px);
 }
 .contact-no{
   margin-top: 1.2vh;
@@ -608,6 +541,9 @@ hr{
 @media screen and (max-width: 930px) {
   .navLink {
     width: 65vw;
+  }
+  .logo{
+    height:3.5vh;
   }
 }
 
@@ -634,6 +570,9 @@ hr{
   .navbar {
     position: relative;
   }
+  body{
+    overflow-x: hidden;
+  }
 }
 
 @media screen and (min-width: 560px) {
@@ -653,9 +592,6 @@ hr{
   }
   .card-content{
     top:-1vh;
-  }
-  .guideline-right-section{
-    left:0vw;
   }
   .btn{
   font-size: 1vh;
@@ -682,9 +618,7 @@ hr{
     }
    
 
-    .guideline-left-section, .guideline-right-section{
-      height:50vh;
-    }
+    
 }
 
 @media screen and (max-width:950px){
@@ -706,9 +640,7 @@ hr{
   .btn{
     font-size: 0.5vh;
   }
-  .guideline-left-section , .guideline-right-section{
-    height:80%;
-  }
+  
   #guideline-btn, #register-btn{
     padding:0.3vh 0vw;
   }
@@ -721,13 +653,15 @@ hr{
 @media screen and (max-width:650px){
   .row-section{
     flex-direction: column;
-    height: 90vh;
+    height: fit-content;
     justify-content: space-evenly;
+    align-items: center;
   }
   .row-card-main-container-left, .row-card-main-container-right{
-    width:90vw;
+    width:100%;
     align-items: center;
     height: 50%;
+    margin:10vh 0vw;
   }
 
   .row-card{
@@ -735,9 +669,7 @@ hr{
     height:30vh;
   }
 
-  .row-card-right{
-    left:36vw;
-  }
+ 
   .card-content p{
     font-size: 1.4vw;
   }
@@ -751,35 +683,10 @@ hr{
   }
   
 
-  .guideline-left-section, .guideline-right-section{
-    height: 100%;
-  }
-
-  .guideline-right-section{
-    position: relative;
-    left:17vw;
-  }
-
-  .guideline-left-section .guideline-content{
-    width:80%;
-    margin-left:1vw;
-  }
-
-  .guideline-box{
-    font-size: 2vw;
-  }
-
-  .guideline-content h2{
-    font-size: 4vw;
-  }
-
-  .guideline-right-section  .guideline-box{
-    margin-left: 4vw;
-  }
-
+ 
   .btn{
     width:62%;
-    border-radius: 2px;
+    border-radius: 4px;
     margin:0vh 0vw;
     font-size:0.7vh;
   }
@@ -790,19 +697,18 @@ hr{
 }
 
 @media screen and (max-width:500px){
-  .row-card{
-    flex-grow: 1;
-  }
 
-  .row-card-right{
-    left:28vw;
-  }
-  .row-card-left{
-    right:18vw;
+  .card-content .comp-hover-des{
+    margin-bottom: 0vh;
+    font-size: 45%;
   }
   .btn{
     border-width: 1px;
     margin:0.3vh 0vw;
+  }
+
+  .nav-links a{
+    font-size: calc(0.8vh + 3px);
   }
 }
 
@@ -813,26 +719,31 @@ hr{
 
   .card-content .comp-hover-des{
     margin-bottom: 0.4vh;
+    font-size: 10%;
+    width:80%;
   }
 
   #guideline-btn{
-    padding:0.4vh 0vw;
+    padding:0.3vh 0vw;
   }
 
   #register-btn{
     padding:0.2vh 0vw;
   }
 
-  .guideline-left-section , .guideline-right-section{
-    height:70%;
-  }
-
-  .guideline-right-section{
-    left:10vw;
-  }
+ .row-card-main-container-left , .row-card-main-container-right{
+  margin:8vh 0vw;
+ }
 
  
+ 
 }
+
+@media screen and (max-width:300px){
+  .card-content .comp-hover-des{
+    font-size: 0.7vh;
+  }
+ }
 
 @media (max-width:1000px) and (orientation:landscape){
   .navbar{

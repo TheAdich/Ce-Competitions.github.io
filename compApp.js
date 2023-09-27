@@ -4,11 +4,14 @@ const navBar=document.querySelector(".navbar");
 const guidelineBtns=document.querySelectorAll(".guideline-hover-Btn")
 const guidelineLeftSection=document.querySelectorAll(".guideline-left-section");
 const guidelineRightSection=document.querySelectorAll(".guideline-right-section");
+const competitionWebpage=document.querySelector(".competition-webpage")
+console.log(competitionWebpage)
 
 
 //When we click on the hamburger menu the hamburger menu should appear 
 hamburgerIcon.addEventListener("click",()=>{
     hamburgerMenu.classList.toggle("hamburger-section-show");
+    competitionWebpage.classList.toggle("competition-webpage-hide")
     navBar.classList.toggle("hamburger-navbar")
 });
 
@@ -41,6 +44,8 @@ guidelineBtns.forEach(guidelineBtn=>{
     })
 })
 
+//js for the city dropdown list
+
 let dropdownicon = document.querySelector('.city-selection-list-input-image');
 let dropdownlist = document.querySelector('.city-selection-list-option');
 dropdownicon.onclick = function(){
@@ -54,8 +59,7 @@ function show(anything){
     dropdownlist.classList.toggle('active');
 }
 
-
-
+//Js for map section
 var scrollmap = document.querySelector('.main-hero-section-map');
 var bhuneswarx = 1.2;
 var bhuneshwary = 1.2;
